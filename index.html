@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="ip1" placeholder="To do list" />
+      <input type="submit" value="ADD" />
+     
+    </form>
+    <ol id="ol"></ol>
+    <script>
+      let form = document.getElementById("form");
+      let ip1 = document.getElementById("ip1");
+      let ol = document.getElementById("ol");
+    
+
+      form.addEventListener("submit", function a(e) {
+        e.preventDefault();
+
+        let list = document.createElement("li");
+        list.innerHTML = ip1.value+"  ";
+        let btn=document.createElement("button");
+        
+        btn.addEventListener("click",()=>{
+         ol.removeChild(list)
+        
+      });
+      btn.innerHTML="DELETE"
+        list.appendChild(btn)
+        ol.appendChild(list);
+        ip1.value = "";
+    
+        
+      });
+     
+    </script>
+  </body>
+</html>
